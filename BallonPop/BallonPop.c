@@ -3,23 +3,21 @@
 
 int main(void)
 {
+	uint64_t score = 0;
+	
 	InitWindow(640, 480, "Ballon Pop!");
 	InitAudioDevice();
 
 	SetTargetFPS(60);
 
-	uint64_t score = 0;
-
 	Texture2D clouds = LoadTexture("clouds.png");
-
 	Sound pop = LoadSound("pop.mp3");
-
 	Music lofi = LoadMusicStream("lofi.mp3");
-	PlayMusicStream(lofi);
-
 	Vector2 ballonPos = 
 		{GetRandomValue(0, 640), GetRandomValue(60, 480)};
 
+	PlayMusicStream(lofi);
+	
 	while (!WindowShouldClose()) {
 		UpdateMusicStream(lofi);
 
